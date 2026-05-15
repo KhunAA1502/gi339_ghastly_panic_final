@@ -13,9 +13,17 @@ public class MonsterAI : MonoBehaviour
     public float detectionRange = 10.0f;
     public float chaseSpeed = 5.0f;
 
+    [Header("Audio Settings")]
+    public AudioSource chaseAudioSource;
+    public AudioClip chaseMusic;
+    [Range(0f, 1f)] public float chaseAudioVolume = 0.5f;
+    public AudioSource[] otherAudioSources;
+    private bool wasPlayingChaseMusicLastFrame = false;
+
     private Transform playerTransform;
     private Rigidbody monsterRigidbody;
     private bool isChasing = false;
+    private bool isChasingPreviousFrame = false;
 
     void Start()
     {
@@ -23,13 +31,21 @@ public class MonsterAI : MonoBehaviour
 
         monsterRigidbody = GetComponent<Rigidbody>();
 
-        // ตั้งค่า Rigidbody ผ่านโค้ดเพื่อป้องกันความผิดพลาด
+        // Setup AudioSource for chase music
+        if (chaseAudioSource == null)
+        {
+            chaseAudioSource = gameObject.AddComponent<AudioSource>();
+        }
+        chaseAudioSource.loop = true;
+        chaseAudioSource.playOnAwake = false;
+
+        // Configure Rigidbody for monster movement
         monsterRigidbody.useGravity = true;
         monsterRigidbody.isKinematic = false;
         monsterRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
         monsterRigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
-        // ล็อกการหมุนไม่ให้มอนสเตอร์ล้มคว่ำ (Freeze Rotation X, Z)
+        // Lock rotation to prevent flipping
         monsterRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
@@ -47,6 +63,20 @@ public class MonsterAI : MonoBehaviour
         if (distanceToPlayer < detectionRange) isChasing = true;
         else if (distanceToPlayer > detectionRange + 2f) isChasing = false;
 
+        // Manage audio when chase state changes
+        if (isChasing != isChasingPreviousFrame)
+        {
+            if (isChasing)
+            {
+                StartChaseMusic();
+            }
+            else
+            {
+                StopChaseMusic();
+            }
+            isChasingPreviousFrame = isChasing;
+        }
+
         if (isChasing) ChasePlayer();
         else Patrol();
     }
@@ -57,7 +87,7 @@ public class MonsterAI : MonoBehaviour
 
         MoveTowardsTarget(targetPosition, patrolSpeed);
 
-        // เช็คระยะห่างโดยไม่สนแกน Y (แก้ปัญหามอนสเตอร์เดินไม่ถึงจุดเพราะจุดลอยหรือจม)
+        // Compare positions on X and Z axis only (ignore Y)
         Vector3 flatPos = new Vector3(transform.position.x, 0, transform.position.z);
         Vector3 flatTarget = new Vector3(targetPosition.x, 0, targetPosition.z);
 
@@ -74,9 +104,9 @@ public class MonsterAI : MonoBehaviour
 
     void MoveTowardsTarget(Vector3 target, float speed)
     {
-        // 1. หมุนตัวไปหาเป้าหมาย
+        // Calculate direction toward target
         Vector3 direction = (target - transform.position).normalized;
-        direction.y = 0; // ไม่ให้เงยหน้าหรือก้มหน้าตามเป้าหมาย
+        direction.y = 0; // Keep movement on horizontal plane
 
         if (direction != Vector3.zero)
         {
@@ -84,7 +114,7 @@ public class MonsterAI : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
         }
 
-        // 2. เคลื่อนที่ (ใช้การย้ายตำแหน่งตรงๆ แต่คงค่า Velocity Y ไว้เพื่อให้ฟิสิกส์แรงโน้มถ่วงทำงาน)
+        // Move toward target
         Vector3 movePos = Vector3.MoveTowards(transform.position,
                           new Vector3(target.x, transform.position.y, target.z),
                           speed * Time.deltaTime);
@@ -92,16 +122,91 @@ public class MonsterAI : MonoBehaviour
         transform.position = movePos;
     }
 
+    /// <summary>
+    /// Starts playing chase music and stops all other audio
+    /// </summary>
+    void StartChaseMusic()
+    {
+        if (chaseMusic == null)
+        {
+            Debug.LogWarning("Chase music not assigned to " + gameObject.name);
+            return;
+        }
+
+        // Stop all other audio sources
+        if (otherAudioSources != null)
+        {
+            foreach (AudioSource audioSource in otherAudioSources)
+            {
+                if (audioSource != null && audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+            }
+        }
+
+        // Stop Horror Sound if found in scene
+        GameObject horrorSoundObj = GameObject.Find("Horror Sound");
+        if (horrorSoundObj != null)
+        {
+            AudioSource horrorAudio = horrorSoundObj.GetComponent<AudioSource>();
+            if (horrorAudio != null && horrorAudio.isPlaying)
+            {
+                horrorAudio.Stop();
+            }
+        }
+
+        // Play chase music
+        if (chaseAudioSource != null)
+        {
+            chaseAudioSource.clip = chaseMusic;
+            chaseAudioSource.volume = chaseAudioVolume;
+            if (!chaseAudioSource.isPlaying)
+            {
+                chaseAudioSource.Play();
+            }
+        }
+
+        wasPlayingChaseMusicLastFrame = true;
+    }
+
+    /// <summary>
+    /// Stops chase music and resumes main music
+    /// </summary>
+    void StopChaseMusic()
+    {
+        if (chaseAudioSource != null && chaseAudioSource.isPlaying)
+        {
+            chaseAudioSource.Stop();
+        }
+
+        // Resume Horror Sound
+        GameObject horrorSoundObj = GameObject.Find("Horror Sound");
+        if (horrorSoundObj != null)
+        {
+            AudioSource horrorAudio = horrorSoundObj.GetComponent<AudioSource>();
+            if (horrorAudio != null && !horrorAudio.isPlaying)
+            {
+                horrorAudio.Play();
+            }
+        }
+
+        wasPlayingChaseMusicLastFrame = false;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // เรียกใช้ Respawn จากภาพโค้ด PlayerController ของคุณ
+            // Call Respawn from PlayerController
             var pc = collision.gameObject.GetComponent<PlayerController>();
             if (pc != null) pc.Respawn();
 
-            // วาร์ปกลับจุดเดินที่ใกล้ที่สุดทันทีเพื่อลดอาการดีด
+            // Stop chasing and reset position
             isChasing = false;
+            isChasingPreviousFrame = false;
+            StopChaseMusic();
+            
             float distToA = Vector3.Distance(transform.position, pointA.position);
             transform.position = (distToA < Vector3.Distance(transform.position, pointB.position)) ? pointA.position : pointB.position;
         }

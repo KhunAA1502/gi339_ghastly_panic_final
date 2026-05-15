@@ -184,6 +184,10 @@ MonoBehaviour:
   patrolSpeed: 2
   detectionRange: 5
   chaseSpeed: 5
+  chaseAudioSource: {fileID: 0}
+  chaseMusic: {fileID: 8300000, guid: 000fb24cb06be4742b44800146bfac9c, type: 3}
+  chaseAudioVolume: 0.1
+  otherAudioSources: []
 --- !u!1001 &2321826656270103036
 PrefabInstance:
   m_ObjectHideFlags: 0
