@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c50d7fe886123524b985153c4652c4bc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130073
+  packageName: Old Column
+  packageVersion: 1.0
+  assetPath: Assets/Old Column/Column.prefab
+  uploadId: 270932
