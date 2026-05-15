@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
-    public float crouchSpeed = 3f; // ความเร็วตอนย่อ ช้ากว่าเดินปกติ
+    public float crouchSpeed = 5f; // ความเร็วตอนย่อ เดียวกับ walkSpeed
     public float mouseSensitivity = 2f;
     public Transform cameraTransform;
     public float minPitch = -40f;
