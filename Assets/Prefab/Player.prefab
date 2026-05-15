@@ -313,8 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   walkSpeed: 3
-  runSpeed: 5
-  crouchSpeed: 2
+  runSpeed: 7
+  crouchSpeed: 1
   mouseSensitivity: 2
   cameraTransform: {fileID: 4598752254728068148}
   minPitch: -40
