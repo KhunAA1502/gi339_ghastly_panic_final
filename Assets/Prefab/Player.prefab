@@ -166,11 +166,11 @@ GameObject:
   m_Component:
   - component: {fileID: 285746003713416800}
   - component: {fileID: 872237486009613397}
-  - component: {fileID: 5799608299377543682}
   - component: {fileID: 6989431442452974282}
   - component: {fileID: 4608707427774792508}
   - component: {fileID: 5281150321460651141}
   - component: {fileID: 48447164906163258}
+  - component: {fileID: -3461343281291888712}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -217,26 +217,6 @@ MonoBehaviour:
   stepSmooth: 0.1
   normalHeight: 2
   crouchHeight: 0.5
---- !u!114 &5799608299377543682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4356522209002180013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac4e5227966d8947906bb6e2e119ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  interactDistance: 3
-  searchTime: 1
-  searchHintObj: {fileID: 0}
-  searchingStatusObj: {fileID: 0}
-  nothingFoundObj: {fileID: 0}
-  foundKeyObj: {fileID: 0}
-  keyIcon: {fileID: 0}
-  radialBar: {fileID: 0}
 --- !u!33 &6989431442452974282
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -344,3 +324,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &-3461343281291888712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356522209002180013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b424d41b8a33c4199651d8ab94c4b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController

@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     private Vector3 crouchCameraPosition;
     private Vector3 normalCenter;
     private Vector3 crouchCenter;
+    private Vector3 lastCheckpointPosition;  //04
+
 
     void Start()
     {
@@ -112,5 +114,25 @@ public class Player : MonoBehaviour
                 rb.position += new Vector3(0f, stepSmooth, 0f);
             }
         }
+    }
+
+    public void UpdateCheckPoint(Vector3 newPos)
+    {
+        lastCheckpointPosition = newPos;
+        Debug.Log("บันทึกจุด Checkpoint ใหม่เรียบร้อย!");
+    }
+
+    // ใช้สำหรับวาร์ปกลับเมื่อโดนผีแตะ
+    public void Respawn()  //04
+    {
+        CharacterController cc = GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = false; // ปิดตัวควบคุมชั่วคราวเพื่อให้วาร์ปได้
+
+        transform.position = lastCheckpointPosition;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        if (cc != null) cc.enabled = true; // เปิดกลับมาใช้งานต่อ
+        Debug.Log("Player กลับไปที่จุด Checkpoint");
     }
 }
