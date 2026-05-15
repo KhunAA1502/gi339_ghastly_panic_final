@@ -23571,131 +23571,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 475148, guid: b826295956c65444987d7baae67c5858, type: 3}
   m_PrefabInstance: {fileID: 1357505021}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1360702316
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2662222679564363740, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_text
-      value: 'CORRECT KEY!   I SURVIVE ! ! ! '
-      objectReference: {fileID: 0}
-    - target: {fileID: 3676192182102603916, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_Name
-      value: 06-TANAPAT
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367192653581332767, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_text
-      value: I FOUND THE KEY!
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 236.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 229.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.0000005066394
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154796439535291525, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7827202376488559986, guid: 8b686e464749f174ab1628e837010980, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8b686e464749f174ab1628e837010980, type: 3}
---- !u!1 &1360702317 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1535703163232083291, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360702318 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 383798190186558323, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360702319 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6435454320759353316, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360702320 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4933525584561095524, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360702321 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1145775333388831290, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360702322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3323271245377538568, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360702323 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 155235745576046695, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360702324 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 836373277094591901, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360702325 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 237104480640335234, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1360702326 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4013561429165534760, guid: 8b686e464749f174ab1628e837010980, type: 3}
-  m_PrefabInstance: {fileID: 1360702316}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &1368894888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28006,16 +27881,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   interactDistance: 3
   searchTime: 1
-  searchHintObj: {fileID: 1360702325}
-  searchingStatusObj: {fileID: 1360702323}
-  nothingFoundObj: {fileID: 1360702321}
-  foundKeyObj: {fileID: 1360702318}
-  checkKeyHintObj: {fileID: 1360702324}
-  checkingKeyStatusObj: {fileID: 1360702322}
-  wrongCarObj: {fileID: 1360702320}
-  winObj: {fileID: 1360702319}
-  keyIcon: {fileID: 1360702317}
-  radialBar: {fileID: 1360702326}
+  searchHintObj: {fileID: 0}
+  searchingStatusObj: {fileID: 0}
+  nothingFoundObj: {fileID: 0}
+  foundKeyObj: {fileID: 0}
+  checkKeyHintObj: {fileID: 0}
+  checkingKeyStatusObj: {fileID: 0}
+  wrongCarObj: {fileID: 0}
+  winObj: {fileID: 0}
+  keyIcon: {fileID: 0}
+  radialBar: {fileID: 0}
 --- !u!1001 &1550756087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41669,4 +41544,3 @@ SceneRoots:
   - {fileID: 469257984}
   - {fileID: 1543655199}
   - {fileID: 1953213386}
-  - {fileID: 1360702316}
