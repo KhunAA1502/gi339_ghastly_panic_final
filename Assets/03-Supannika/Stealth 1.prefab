@@ -4029,6 +4029,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1546106341586122831}
     m_Modifications:
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointA
+      value: 
+      objectReference: {fileID: 8758041469420212754}
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointB
+      value: 
+      objectReference: {fileID: 1079708566556346615}
     - target: {fileID: 963825321975379634, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
       propertyPath: m_Name
       value: Ghost (3)
@@ -10362,6 +10370,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1546106341586122831}
     m_Modifications:
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointA
+      value: 
+      objectReference: {fileID: 1016193629758899843}
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointB
+      value: 
+      objectReference: {fileID: 1926752252643278973}
     - target: {fileID: 963825321975379634, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
       propertyPath: m_Name
       value: Ghost (1)
@@ -21853,6 +21869,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1546106341586122831}
     m_Modifications:
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointA
+      value: 
+      objectReference: {fileID: 3772826487495536127}
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointB
+      value: 
+      objectReference: {fileID: 5899289322020509552}
     - target: {fileID: 963825321975379634, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
       propertyPath: m_Name
       value: Ghost (4)
@@ -27258,6 +27282,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1546106341586122831}
     m_Modifications:
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointA
+      value: 
+      objectReference: {fileID: 8350300787412568149}
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointB
+      value: 
+      objectReference: {fileID: 4008488148180832954}
     - target: {fileID: 963825321975379634, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
       propertyPath: m_Name
       value: Ghost
@@ -28008,6 +28040,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1546106341586122831}
     m_Modifications:
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointA
+      value: 
+      objectReference: {fileID: 131605736154990999}
+    - target: {fileID: 746056008796712463, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
+      propertyPath: pointB
+      value: 
+      objectReference: {fileID: 4567465866742194379}
     - target: {fileID: 963825321975379634, guid: 83e65167070108344a8d79d4b868fb9a, type: 3}
       propertyPath: m_Name
       value: Ghost (2)
