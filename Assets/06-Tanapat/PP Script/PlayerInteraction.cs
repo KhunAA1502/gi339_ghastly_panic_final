@@ -20,6 +20,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject checkingKeyStatusObj; // ลาก "Checking key..." มาใส่
     public GameObject wrongCarObj;       // ลาก "THIS IS NOT THE RIGHT CAR..." มาใส่
     public GameObject winObj;            // ลาก "CORRECT KEY! YOU WIN!" มาใส่
+    public GameObject thankYouObj;       // ลาก "Thank You" Image มาใส่
 
     [Header("UI General")]
     public GameObject keyIcon;            // ลาก "KEY" (รูปมุมจอ) มาใส่
@@ -146,13 +147,12 @@ public class PlayerInteraction : MonoBehaviour
         if (currentCar.isCorrectCar)
         {
             winObj.SetActive(true);
-            isGameFinished = true; // ล็อคระบบไม่ให้เช็คคันอื่นได้อีก
             
             radialBar.gameObject.SetActive(false);
             checkKeyHintObj.SetActive(false);
 
-            // สั่งให้ข้อความชนะหายไปหลังจาก 5 วินาที
-            Invoke("HideWinMessage", 5f); 
+            // แสดงข้อความชนะ 5 วินาที แล้วหยุดเกม
+            Invoke("HideWinMessageAndStopGame", 5f); 
         }
         else
         {
@@ -200,6 +200,14 @@ public class PlayerInteraction : MonoBehaviour
         if (winObj != null) winObj.SetActive(false);
     }
 
+    void HideWinMessageAndStopGame()
+    {
+        if (winObj != null) winObj.SetActive(false);
+        if (thankYouObj != null) thankYouObj.SetActive(true);
+        isGameFinished = true;
+        Time.timeScale = 0f; // ปิดเกมทันที (pause)
+    }
+
     void HideAllUI()
     {
         searchHintObj.SetActive(false);
@@ -210,6 +218,7 @@ public class PlayerInteraction : MonoBehaviour
         checkingKeyStatusObj.SetActive(false);
         wrongCarObj.SetActive(false);
         winObj.SetActive(false);
+        thankYouObj.SetActive(false);
         keyIcon.SetActive(false);
         radialBar.gameObject.SetActive(false);
     }
